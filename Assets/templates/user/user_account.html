@@ -1,0 +1,106 @@
+{% extends 'user/base.html' %}
+{% block userblock %}
+{% load staticfiles %}
+
+    <title>User Account Details</title>
+
+<style>
+          .giver1 {
+    color: black;
+    font-family: cooper;
+    padding: 50px;
+    margin-right: 500px;
+    font-size: 17px;
+    background-color: tomato;
+    border-radius: 11px;
+}
+          .space
+      {
+            padding:10px;
+            border-radius:10px;
+      }
+      input, select {
+    padding: 10px 10px;
+    border-radius:10px;
+    font-family:Abel;
+    font-size:20px;
+
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+</style>
+<body>
+<h1>REGISTER YOUR CREDIT CARD DETAILS</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table  class="giver1">
+        <tr>
+            <td><label for="ch">CARD HOLDER</label></td>
+            <td><input type="text" id="ch" name="cardholder"></td>
+        </tr>
+
+        <tr>
+            <td><label for="ct">CARD TYPE</label> </td>
+            <td>
+                <select id="ct" name="carttype">
+                <option value="">--SELECT--</option>
+                <option value="visa">Visa</option>
+                <option value="Master Card">Master Card</option>
+                <option value="American Express">American Express</option>
+                <option value="Discover">Discover</option>
+                <option value="RuPay">RuPay</option>
+                <option value="Visa Electron">Visa Electron</option>
+                <option value="Maestro ">Maestro </option>
+                <option value="Contactless  ">Contactless  </option>
+            </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label for="ib">ISSUING BANK</label> </td>
+            <td><input type="text" id="ib" name="issuingbank" ></td>
+        </tr>
+
+        <tr>
+            <td><label for="cn">CARD NUMBER</label> </td>
+            <td><input type="number" id="cn" name="cardnumber"></td>
+        </tr>
+
+        <tr>
+            <td><label for="cv">CVV</label></td>
+            <td><input type="number" id="cv" name="cvv"></td>
+        </tr>
+
+        <tr>
+            <td><label for="id">ISSUE DATE</label></td>
+            <td><input type="date" id="id" name="issusedate"></td>
+        </tr>
+
+        <tr>
+            <td><label for="ed">EXPIRE DATE</label></td>
+            <td><input type="date" id="ed" name="expiredate"></td>
+        </tr>
+
+        <tr>
+            <td><label for="pn">PIN NUMBER</label> </td>
+            <td><input type="number" id="pn" name="pinnumber"></td>
+        </tr>
+
+        <tr>
+            <td><label for="cl">CREDIT LIMIT</label> </td>
+            <td><input type="number" id="cl" name="creditlimit"></td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="REGISTER"></td>
+            <td><input type="reset" value="RESET"></td>
+        </tr>
+
+    </table>
+</form>
+
+</body>
+{% endblock %}

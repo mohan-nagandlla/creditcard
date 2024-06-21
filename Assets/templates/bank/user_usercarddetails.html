@@ -1,0 +1,93 @@
+{% extends 'bank/base1.html' %}
+{% block userblock %}
+{% load staticfiles %}
+      <style>
+            body{
+
+
+
+    }
+
+
+        * {
+
+        }
+
+        #myInput {
+
+        }
+
+        #myTable {
+        margin: 50px 259px 0px 259px;
+        font-family: Abel;
+        font-size:19px;
+    border-collapse: collapse;
+           color: black;
+    background-color: whitesmoke;
+            width:%;
+            position:absolute;
+
+            font-weight: bolder;
+            overflow: auto;
+
+
+        }
+
+        #myTable td, #myTable th {
+            border: 1px solid #ddd;
+
+
+        }
+
+
+
+        #myTable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            margin-top:50px;
+         background-color: mediumpurple;
+         color: white;
+        }
+        .submit{
+
+        }
+    .fix{
+
+    }
+    </style>
+
+<body>
+  <table id="myTable">
+      <tr class="fix">
+          <th>FULL NAME</th>
+          <th>CARD TYPE</th>
+          <th>CARD NUMBER</th>
+          <th>CVV</th>
+          <th>EXPIRE DATE</th>
+          <th>PIN NUMBER</th>
+          <th>AMOUNT</th>
+          <th>DATE</th>
+          <th>TIME</th>
+
+
+      </tr>
+      {% for d in obj %}
+      <tr>
+          <td>{{d.tname.name}}</td>
+          <td>{{d.tcarttype}}</td>
+          <td>{{d.tcardnumber}}</td>
+          <td>{{d.tccv}}</td>
+          <td>{{d.texpiredate}}</td>
+          <td>{{d.tpinnumber}}</td>
+          <td>{{d.tamount}}</td>
+          <td>{{d.tdate}}</td>
+          <td>{{d.ttime}}</td>
+
+
+      </tr>
+      {% endfor %}
+  </table>
+
+</body>
+{% endblock %}

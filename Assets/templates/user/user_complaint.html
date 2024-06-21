@@ -1,0 +1,88 @@
+{% extends 'user/base.html' %}
+{% block userblock %}
+{% load staticfiles %}
+
+    <title>Complaint</title>u</title>
+<style>
+       .giver1 {
+    color: black;
+    font-family: cooper;
+    padding: 50px;
+    margin-right: 500px;
+     background-color: tomato;
+    border-radius: 11px;
+}
+          .space
+      {
+            padding:10px;
+            border-radius:10px;
+      }
+      input {
+    padding: 10px 10px;
+    border-radius:10px;
+    font-family:Abel;
+    font-size:20px;
+
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+
+    </style>
+
+<body>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table  class="giver1">
+        <tr>
+            <td><label for="bk">BANK</label></td>
+            <td><input type="text" id="bk" name="bank"></td>
+        </tr>
+
+        <tr>
+            <td><label for="bnch">BRANCH</label> </td>
+            <td><input type="text" id="bnch" name="branch" ></td>
+        </tr>
+
+        <tr>
+            <td><label for="ac">ACCOUNT NUMBER</label> </td>
+            <td><input type="number" id="ac" name="accountnumber"></td>
+        </tr>
+
+        <tr>
+            <td><label for="un">USER NAME</label></td>
+            <td><input type="text" id="un" name="username"></td>
+        </tr>
+
+        <tr>
+            <td><label for="mn">MOBILE NUMBER</label></td>
+            <td><input type="number" id="mn" name="mobilenumber"></td>
+        </tr>
+
+        <tr>
+            <td><label for="ed">COMPLAINT</label></td>
+            <td><input type="type" id="ed" name="complaint"></td>
+        </tr>
+
+        <tr>
+            <td><label for="pn">DATE</label> </td>
+            <td><input type="date" id="pn" name="date"></td>
+        </tr>
+
+        <tr>
+            <td><label for="cl">TIME</label> </td>
+            <td><input type="time" id="cl" name="time"></td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="REGISTER"></td>
+            <td><input type="reset" value="RESET"></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+    background: url("{% static 'admin.png' %}");
+    background-size:cover;
+    }
+    .container .login{
+    position:absolute;
+    top:50%;
+    right:64%;
+    transform: translate(-50%, -50%);
+    background-color:lightcoral;
+    font-family: cooper;
+    color:white;
+    font-size:16px;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    }
+
+    .container .login:hover{
+    background-color: black;
+    }
+
+    .container .register{
+    position:absolute;
+    top:50%;
+    left:74%;
+    transform: translate(-50%, -50%);
+    background-color:teal;
+    font-family: cooper;
+    color:white;
+    font-size:16px;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    }
+
+    .container .register:hover{
+    background-color: black;
+    }
+    h1{
+    text-align:center;
+    font-family: Abel;
+    font-size: 46px;
+    font-weight: bolder;
+    color: white;
+    background-color:black;
+
+    }
+.admin{
+    margin: 165px 660px 0px;
+    background-color: steelblue;
+    width: 100px;
+    height: 46px;
+    border-radius: 6px;
+
+}
+
+</style>
+<body>
+<h1>Credit_Card_Fraud_Detection</h1>
+<div class="container">
+    <a href="{% url 'user_login' %}"><button class="login" name="login">USER</button></a>
+    <a href="{% url 'bank_login' %}"><button class="register" name="register">BANK</button></a>
+    <a href="{% url 'admin_login' %}"><button class="admin" name="admin">ADMIN</button></a>
+</div>
+
+
+</body>
+</html>
